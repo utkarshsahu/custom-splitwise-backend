@@ -71,7 +71,6 @@ public class SplitwiseService {
   public ResponseEntity<String> createUserGroup(AppGroupRequest req) {
     String groupName = req.getGroupName();
 
-    // todo: implement this check by foreign key
     for (String phoneNumber : req.getUsers()) {
       if (!userRepo.findById(phoneNumber).isPresent()) {
         return new ResponseEntity<>("No user exists with phone number - " + phoneNumber, HttpStatus.OK);
@@ -168,6 +167,8 @@ public class SplitwiseService {
           paymentTo.add(new PayerAmountObject(obj.getPhoneNumber(), amount));
         }
       }
+    } else if (splitType.equals("percentage")) {
+      return new ResponseEntity<String> ("Percentage split feature not implemented yet", HttpStatus.NOT_IMPLEMENTED);
     }
     // List<ExpenseLink> expenseRecords = new ArrayList<ExpenseLink>();
     Expense ex = expenseRepo.save(new Expense(req.getExpenseName(), req.getTotalAmount(), null));

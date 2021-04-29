@@ -9,15 +9,15 @@ public class UserViewResponse {
 
   private List<UserObligation> obligations;
 
-  public UserViewResponse(String phoneNumber, String name, List<UserObligation> payments) {
+  public UserViewResponse(String phoneNumber, String name, List<UserObligation> obligations) {
     this.setPhoneNumber(phoneNumber);
     this.setName(name);
-    this.setObligations(payments);
+    this.setObligations(obligations);
   }
 
   public UserViewResponse(){}
 
-  public List<UserObligation> getPayments() {
+  public List<UserObligation> getObligations() {
     return obligations;
   }
 
