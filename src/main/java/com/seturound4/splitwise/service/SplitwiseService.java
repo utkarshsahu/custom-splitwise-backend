@@ -239,7 +239,7 @@ public class SplitwiseService {
     for (Map.Entry mapElement : map.entrySet()) {
       String key = (String) mapElement.getKey();
       float value = (float) mapElement.getValue();
-      UserObligation u = new UserObligation(key, value, (value > 0) ? "gets back" : (value == 0) ? "settled" : "owes");
+      UserObligation u = new UserObligation(key, value > 0 ? value : (0-value), (value > 0) ? "gets back" : (value == 0) ? "settled" : "owes");
       resp.addObligations(u);
     }
     return new ResponseEntity<UserViewResponse> (resp, HttpStatus.OK);
