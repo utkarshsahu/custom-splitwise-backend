@@ -61,4 +61,4 @@ Example request:
 ```
 5. /userView (GET) -> userPhoneNumber: string -> For a user, this view shows all the obligations/payments status that he/she has with other users
 
-6. /expenseView (GET) -> expenseId: string -> For an expense, this view shows all the users involved with the expense and how much have they paid and owe in this particular expense.
+6. /expenseView (GET) -> expenseId: long -> For an expense, this view shows all the users involved with the expense and how much have they paid and owe in this particular expense.
