@@ -2,7 +2,7 @@
 
 1. Run `mvn clean compile` in root folder of this project
 
-2. In application.properties, change spring.datasource.url to `/local/path/of/repo/test;DB_CLOSE_ON_EXIT=FALSE`
+2. In application.properties, change spring.datasource.url to `/path/to/rootfolder/test;DB_CLOSE_ON_EXIT=FALSE`
 
 3. Run SplitwiseApplication.java in src/main/java/com/seturound4/splitwise
 
